@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="media\favicon.ico">
+    <title>Bioacoustics Meeting Notes</title>
+  </head>
+  <body>
+    <header>
+      <span>AGENDA</span>
+      <nav>
+        <ol>
+          <li><a href="#attendance">Attendance</a></li>
+          <li><a href="#last meeting">From Last Meeting</a></li>
+          <li><a href="#new business">New Business</a></li>
+            <ul>
+                <li><a href="#knowledge graphs">Knowledge Graphs</a></li>
+                <li><a href="#applications">Applications to Bioacoustics</a></li>
+            </ul>
+          <li><a href="#next steps">Next Steps</a></li>
+        </ol>
+      </nav>
+    </header>
+    <hr>
+    <div class="main container">
+    <main>
+      <h1>Knowlege Graph For Bioacoustics</h1>
+        <h1>Meeting 03/02/2026</h1>
+            <!-- <hr> -->
+            <h2 id="attendance">Attendance List</h2>
+            <ul>
+                <li>K. Dempster</a></li>
+                <li>R. Sabhlok</a></li>
+                <li>T. Sakamoto</a></li>
+                <li>C. Zhang</a></li>
+            </ul>
+            <!-- <hr> -->
+            <h2 id="last meeting">From Last Meeting</h2>
+                <details>
+                    <summary>Bioacoustics</summary>
+                    <p>
+                        <b>Bioacoustics</b> is the study of using environmental audio recordings, often 
+                        referred to as soundscapes, to draw conclusions about the environment. To that 
+                        end, ecologists, musicians, and hobbyists have collected large amounts of
+                        soundscape recordings in hopes to better understand relationships in the environment. 
+                        For instance, scientists found that identifying and replicating bioacoustics emitted 
+                        by healthy coral reef in areas with bleached coral reefs helped
+                        restore aquatic marine life to the bleached reefs, thus increasing biodiversity.
+                        This ultimately helps the environment recover and allow for a more functional
+                        ecosystem. Bioacoustics can also be used to help detect changes in biodiversity 
+                        so that ecologists can better monitor species movement or endangered
+                        species. In differentiating ways, bioacoustics is applicable to various
+                        fields of study, and analyzing bioacoustic data allows experts to better 
+                        understand environments, form hypotheses, and improve the world around us.
+                    </p>
+                </details>
+                <p>
+                    In the context of environmental soundscapes, most audio recordings are 
+                    collected through passive acoustic monitoring (<i>PAM</i>), a non-invasive technique
+                    capable of capturing hundreds of hours of audio recordings with minimal dis-
+                    ruption to the environment being studied. <i>PAM</i> offers consistent audio
+                    recordings whilst removing any confounding variables that could invalidate the
+                    data, a problem faced by other audio recording techniques. Despite these
+                    advantages, the substantial volume of data being captured presents ecologists
+                    with a significant challenge: <strong>the data collected is unlabeled.</strong>
+                </p>
+            <!-- <hr> -->
+            <h2 id="new business">New Business</h2>
+                <section>
+                <h3 id="knowledge graphs">Knowledge Graphs</h3>
+                <img
+                    src="https://assets.zilliz.com/Figure_1_Knowledge_graphs_illustration_643cec06af.png"
+                    alt="knowledge graph example"
+                    width="500"
+                />
+                <p>
+                    Following recent developments in natural language processing and machine
+                    learning, <strong>knowledge graphs</strong> have emerged as a powerful data modeling tool,
+                    capable of breaking down abstract concepts into networks of simpler, 
+                    interrelated concepts. They are a type of graph data structure in which nodes
+                    represent simple concepts identified within audio files, i.e. "lion" and "wind," and
+                    edges represent relationships between them. Knowledge graphs extend this 
+                    concept further by using edges to convey the knowledge of large-scale real world
+                    data, connecting shared characteristics called “features” between data points. For unstructured data, the raw input is run through a data process-
+                    ing pipeline that extracts relationships, producing interpretable entities (nodes)
+                    and connections (edges) used to construct the graph.
+                </p>
+                </section>
+                <br>
+                <section>
+                <h3 id="applications">Applications to Bioacoustics</h3>
+                <p>
+                    Using an unsupervised data processing pipeline to create knowledge graphs,
+                    we can discover and connect features within large batches of unstructured bioa-
+                    coustic audio data sets. Our Python-based data processing pipeline consists of
+                    four major steps. First, the pipeline begins by loading the
+                    audio files and all corresponding annotations. The audio is then passed through
+                    standard preprocessing and denoising steps using a Deep Convolutional Neural
+                    Network architecture. After preprocessing, each file is divided into five-second
+                    segments, or "chunks," which remain linked to the annotations of the original 
+                    recording. Third, the segmented audio clips are processed by an autoencoder.
+                    Autoencoders are unsupervised machine learning models that compress data
+                    into a simplified latent representation and, if needed, reconstruct the original
+                    input from that compressed form. Each time the pipeline receives an au-
+                    dio chunk, the autoencoder trains by repeatedly compressing and decompressing
+                    the input. Our method relies solely on the compressed representations after the
+                    model has completed training. Once a denoised chunk has been encoded into a
+                    vector embedding containing only the most essential distinguishing character-
+                    istics—such as "dog" or "rainy season"—these embeddings are clustered so that
+                    chunks with similar features are grouped together. Finally, a graph is generated
+                    from the encoded data and visualized using the external visualization library
+                    D3. At this stage, the annotations primarily serve to support the visualization.
+                </p>
+                <img
+                    src="https://e4e.ucsd.edu/assets/acoustic_species_id/2025-08-20_knowledge_graph.png"
+                    alt="knowledge graph biacoustic example"
+                    width="500"
+                />
+                <p>
+                    As shown above, the knowledge graph is composed of two types of
+                    nodes: those representing the five second audio chunks and those representing 
+                    features such as time of day, season, species, or weather characteristics. A
+                    feature node is connected to one or more audio-chunk nodes by an edge whenever 
+                    those chunks exhibit that feature. Through these connections, the graph
+                    captures both the characteristics present in each audio segment and the 
+                    relationships among segments that share similar attributes. A feature node is linked to
+                    multiple audio chunks - for example, a node labeled “lion” reveals similarities or
+                    previously overlooked patterns across recordings. Visualizing these relationships
+                    in a graph provides an intuitive way to uncover <em>new connections</em> that may not
+                    be immediately apparent from the raw audio alone. In particular, representing
+                    relationships within under-labeled soundscape data enables ecologists to gain
+                    deeper insight into the environments they study and to develop new hypotheses
+                    through exploration of the generated feature-audio knowledge graph.
+                </p>
+                </section>
+            <!-- <hr> -->
+            <h2 id="next steps">Next Steps</h2>
+                <p>For the next meeting, we should read
+                <a href="https://arxiv.org/pdf/2405.11531">this paper</a>
+                and answer the following questions:</p>
+                <ul>
+                    <li>What are they training against?</li>
+                    <li>What is y true what is y-predicted?</li>
+                    <li>Is it already using a clean dataset and trying to compare the two?</li>
+                    <li>Do they have weights?</li>
+                    <li>What does each block of the model do?</li>
+                </ul>
+            <h2> Video Recording </h2>
+            <!-- Note: these videos and audio are not related to the meeting notes -->
+            <details>
+                <summary>Video</summary>
+                <video controls width="250">
+                    <source src="media\video.mov" />
+                </video>
+            </details>
+            <br>
+            <details>
+                <summary>Audio</summary>
+                <audio controls width="250">
+                    <source src="media\audio.mp3" />
+                </audio>
+            </details>
+    </main>
+    <br>
+    <hr>
+    <footer>
+        <h3>Submit your favorite short story!</h3>
+            <form>
+                <fieldset>
+                    <label>Story Name:</label>
+                        <input type="text" name="title">
+                    <label>Date Written:</label>
+                        <input type="date" name="date">
+                    <br>
+                    <br>
+                    <label>Genre:</label>
+                        <input list="genres" name="genre">
+                        <datalist id="genres">
+                            <option value="Fantasy">
+                            <option value="Mystery">
+                            <option value="Sci-Fi">
+                            <option value="Romance">   
+                        </datalist>
+                    <br>
+                    <br>
+                    <label>Story Length:</label>
+                        <select name="length">
+                            <option>Flash Fiction</option>
+                            <option>Short Story</option>
+                            <option>Long Story</option>
+                        </select>
+                    <br>
+                    <br>
+                    <label>Tone:</label>
+                        <input type="radio" name="tone"> Happy
+                        <input type="radio" name="tone"> Dark
+                        <input type="radio" name="tone"> Hopeful
+                    <br>
+                    <br>
+                    <label>Includes:</label>
+                        <input type="checkbox" name="magic"> Magic
+                        <input type="checkbox" name="twist"> Plot Twist
+                        <input type="checkbox" name="twist"> Historical Setting
+                        <input type="checkbox" name="twist"> Commentary
+                    <br>
+                    <br>
+                    <label>Why you like it:</label><br>
+                        <textarea name="Why You like it!" rows="3" cols="30"></textarea>
+                    <br>
+                    <br>
+                    <button type="submit">Submit</button>
+                </fieldset>
+            </form>
+    </footer>
+    </div>
+  </body>
+</html>
