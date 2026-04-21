@@ -1,0 +1,76 @@
+/*external font*/
+@font-face{
+    font-family: "Amatic SC";
+    src: url(/fonts/Amatic_SC/AmaticSC-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Monsterrat";
+    src: url(/fonts/Montserrat/Montserrat-VariableFont_wght.ttf)
+}
+
+
+
+
+/*body*/
+body {
+    background-color: rgb(255, 253, 246);
+}
+
+/*text*/
+h1 {
+    color: #7b8d3c;
+    font-family: "Amatic SC";
+    font-size: 60px;
+    text-decoration: underline;
+    text-align: center;
+}
+
+h2 {
+    color: hsl(82, 100%, 36%);
+    font-family: "Amatic SC";
+    font-size: 40px;
+}
+
+h3{
+    color: color(srgb 0.9765 0.8196 0.2039);
+    font-family: "Amatic SC";
+    font-size: 30px;
+}
+
+p {
+    color: #2e3a20;
+    font-family: "Monsterrat";
+    font-size: 15px;
+}
+
+ul, ol {
+    color: #2e3a20;
+    font-family: "Monsterrat";
+    font-size: 15px;
+}
+
+a {
+    color: color-mix(green, cyan)
+}
+
+/*colors*/
+#green-kelp{
+    color: #2e3a20;
+}
+
+#conifer{
+    color: hsl(84, 57%, 61%);
+}
+
+#orange{
+    color: orange;
+}
+
+#sycamore {
+    color: #7b8d3c;
+}
+
+#green-cyan{
+    color: color-mix(green, cyan);
+}
