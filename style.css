@@ -1,5 +1,5 @@
 /*external font*/
-@font-face{
+@font-face {
     font-family: "Amatic SC";
     src: url(/fonts/Amatic_SC/AmaticSC-Regular.ttf);
 }
@@ -9,7 +9,72 @@
     src: url(/fonts/Montserrat/Montserrat-VariableFont_wght.ttf)
 }
 
+/* media query */
+@media (max-width: 600px) {
+ 
+    nav ol {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
+    img {
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .newbusiness-container{
+        flex-direction: column;
+    }
+
+    .bioknowledge{
+        flex-direction: column;
+    }
+    /* footer{
+
+    } */
+
+}
+
+:root {
+    --primary-green: #7b8d3c;
+    --main-text: #2e3a20;
+}
+
+/* for nav bar text*/
+nav ol li {
+    color: #2e3a20;
+    font-family: "Monsterrat";
+    font-size: 1.1 rem;
+    display: inline-block;
+}
+
+/* nav bar */
+nav ol {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 5pc;
+}
+
+/* text for Agenda */
+header span {
+    display: inline;
+    color: orange;
+    font-weight: bold;
+    font-family: "Amatic SC";
+    font-size: 24pt;
+    margin: 40px;
+}
+
+/* background for nav bar */
+header {
+    position: sticky;
+    top: 0;
+    background-color: #c4e8a0;
+}
 
 
 /*body*/
@@ -17,53 +82,197 @@ body {
     background-color: rgb(255, 253, 246);
 }
 
-/*text*/
+
+/*title text*/
 h1 {
-    color: #7b8d3c;
+    color: var(--primary-green, #7b8d3c);
     font-family: "Amatic SC";
     font-size: 60px;
     text-decoration: underline;
     text-align: center;
+    margin-bottom: 15px;
 }
 
+/* headers text; typically for section titles */
 h2 {
     color: hsl(82, 100%, 36%);
     font-family: "Amatic SC";
     font-size: 40px;
+
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
-h3{
+
+/* subheaders text */
+h3 {
     color: color(srgb 0.9765 0.8196 0.2039);
     font-family: "Amatic SC";
     font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
+footer h3 {
+    margin-top: 20px;   
+}
+
+
+/* paragraph text */
 p {
-    color: #2e3a20;
+    color: var(--primary-green, #2e3a20);
     font-family: "Monsterrat";
-    font-size: 15px;
+    font-size: 1em;
 }
 
+
+/* lists */
 ul, ol {
     color: #2e3a20;
     font-family: "Monsterrat";
     font-size: 15px;
 }
 
+
+/* changes colors of hyperlinks */
 a {
     color: color-mix(green, cyan)
 }
 
-/*colors*/
-#green-kelp{
+/* changes color when hoovering */
+a:hover {
+    color: orange;
+    text-decoration: underline;
+}
+
+
+/* sets size and margins of main */
+.main {
+    max-width: 1300px;
+    min-width: 300px;
+    margin: 0 auto 0 auto;
+    position: relative;
+}
+
+/* date class text */
+.date {
+    color: orange;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 40px;
+}
+
+/* hr {
+    width: 15cm;
+} */
+
+/* attendance section list */
+#attendance + ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    justify-items: start;
+}
+
+
+
+
+/* NEW BUSINESS SECTION */
+.newbusiness-container {
+    display: flex;
+    gap: 20px;
+}
+
+/* these should be two boxes side to side */
+.newbusiness-container section {
+    flex: 1;
+}
+
+section {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.newbusiness-container section {
+    flex: 1;
+
+    border-style: solid;
+    border-width: 2px;
+    border-color: #7b8d3c;
+    border-radius: 10px;
+
+    padding: 15px;
+}
+
+
+
+/* this allows a third box to be underneath the other two boxes */
+.bioknowledge{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    margin-top: 30px;
+    border: 2px solid #7b8d3c;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.bioknowledge img{
+    width: 40%;
+    height: auto;
+}
+
+.bioknowledge-text{
+    flex: 1;
+}
+
+
+
+/* Adjusts width for all images to be 500px */
+img {
+    width: 50%;
+    max-width: 500px;
+    height: auto;
+}
+
+fieldset {
+    padding: 20px 25px 20px 25px;
+    border: 2px solid #7b8d3c;
+    border-radius: 8px;
+}
+
+textarea {
+    width: 13cm;
+    height: 3cm;
+}
+
+/*footer*/
+footer {
+    position: relative;
+}
+
+
+/*  */
+button:active {
+  box-shadow: 2px 2px 5px orange;
+}
+
+
+/*colors to be used throughout html potentially*/
+#green-kelp {
     color: #2e3a20;
 }
 
-#conifer{
+#conifer {
     color: hsl(84, 57%, 61%);
 }
 
-#orange{
+#orange {
     color: orange;
 }
 
@@ -71,6 +280,6 @@ a {
     color: #7b8d3c;
 }
 
-#green-cyan{
+#green-cyan {
     color: color-mix(green, cyan);
 }

@@ -23,12 +23,11 @@
         </ol>
       </nav>
     </header>
-    <hr>
-    <div class="main container">
+    <div class="main">
     <main>
       <h1>Knowlege Graphs For Bioacoustics</h1>
-        <h2 id="orange">Meeting 03/02/2026</h2>
-            <!-- <hr> -->
+        <h2 class="date">Meeting 03/02/2026</h2>
+            <hr>
             <h2 id="attendance">Attendance List</h2>
             <ul>
                 <li>K. Dempster</li>
@@ -68,6 +67,7 @@
                 </p>
             <!-- <hr> -->
             <h2 id="newbusiness">New Business</h2>
+                <div class = "newbusiness-container">
                 <section>
                 <h3 id="knowledgegraphs">Knowledge Graphs</h3>
                 <img
@@ -113,13 +113,17 @@
                     from the encoded data and visualized using the external visualization library
                     D3. At this stage, the annotations primarily serve to support the visualization.
                 </p>
-                <img
+                </section>
+                </div>
+                <div class="bioknowledge-text">
+                <section class="bioknowledge">
+                    <img
                     src="https://e4e.ucsd.edu/assets/acoustic_species_id/2025-08-20_knowledge_graph.png"
                     alt="knowledge graph biacoustic example"
-                    width="500"
-                >
+                    >
+                <!-- <h3 class="bioknowledge">Bioacoustic Knowledge Graphs</h3> -->
                 <p>
-                    As shown above, the knowledge graph is composed of two types of
+                    As shown, the knowledge graph is composed of two types of
                     nodes: those representing the five second audio chunks and those representing 
                     features such as time of day, season, species, or weather characteristics. A
                     feature node is connected to one or more audio-chunk nodes by an edge whenever 
@@ -134,7 +138,7 @@
                     deeper insight into the environments they study and to develop new hypotheses
                     through exploration of the generated feature-audio knowledge graph.
                 </p>
-                </section>
+                </div>
             <!-- <hr> -->
             <h2 id="nextsteps">Next Steps</h2>
                 <p>For the next meeting, we should read
