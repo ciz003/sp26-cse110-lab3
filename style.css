@@ -17,6 +17,10 @@
         align-items: flex-start;
     }
 
+    header {
+        position: static;
+    }
+
     img {
         max-width: 100%;
     }
@@ -32,10 +36,6 @@
     .bioknowledge{
         flex-direction: column;
     }
-    /* footer{
-
-    } */
-
 }
 
 :root {
@@ -179,10 +179,6 @@ a:hover {
     margin-bottom: 40px;
 }
 
-/* hr {
-    width: 15cm;
-} */
-
 /* attendance section list */
 #attendance + ul {
     display: grid;
@@ -270,7 +266,8 @@ fieldset {
 }
 
 textarea {
-    width: 13cm;
+    width: 100%;
+    max-width: 500px;
     height: 3cm;
 }
 
