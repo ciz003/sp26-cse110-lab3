@@ -43,12 +43,22 @@
     --main-text: #2e3a20;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 /* for nav bar text*/
 nav ol li {
     color: #2e3a20;
     font-family: "Monsterrat";
-    font-size: 1.1 rem;
+    font-size: 1.1rem;
     display: inline-block;
+}
+
+
+/* element > element */
+nav > ol {
+    list-style: none;
 }
 
 /* nav bar */
@@ -122,9 +132,14 @@ footer h3 {
 
 /* paragraph text */
 p {
-    color: var(--primary-green, #2e3a20);
+    color: var(--main-text, #2e3a20);
     font-family: "Monsterrat";
     font-size: 1em;
+}
+
+/* element ~ element */
+h2 ~ p {
+    line-height: 1.6;
 }
 
 
@@ -195,6 +210,7 @@ section {
     padding-bottom: 10px;
     padding-left: 20px;
     padding-right: 20px;
+    /* background-color: rgba(196,232,160,0.2); */
 }
 
 .newbusiness-container section {
@@ -208,6 +224,9 @@ section {
     padding: 15px;
 }
 
+section:has(h3) {
+    background-color: rgba(123,141,60,0.05);
+}
 
 
 /* this allows a third box to be underneath the other two boxes */
@@ -220,6 +239,10 @@ section {
     border: 2px solid #7b8d3c;
     border-radius: 10px;
     padding: 20px;
+}
+
+section.bioknowledge {
+    background-color: rgba(123,141,60,0.05);
 }
 
 .bioknowledge img{
@@ -253,11 +276,41 @@ textarea {
 
 /*footer*/
 footer {
+    font-family: Monsterrat;
+    font-size: 12px;
     position: relative;
+
+    & form {
+        margin-top: 10px;
+    }
+
+    & label {
+        font-weight: bold;
+    }
 }
 
+/* adjusting form colors */
+input[type="text"] {
+    border: 1px solid #7b8d3c;
+}
 
-/*  */
+input[type="date"] {
+    border: 1px solid #7b8d3c;
+}
+
+input[list="genres"] {
+    border: 1px solid #7b8d3c;
+}
+
+input[type="radio"] {
+    accent-color: orange;
+}
+
+input[type="checkbox"] {
+    accent-color: orange;
+}
+
+/* adds a show when clicking on the button */
 button:active {
   box-shadow: 2px 2px 5px orange;
 }
